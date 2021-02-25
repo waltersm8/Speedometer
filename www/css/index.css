@@ -37,38 +37,39 @@ body {
   padding: 0px;
   /* Padding to avoid the "unsafe" areas behind notches in the screen */
   padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-  text-transform: uppercase;
   width: 100%;
 }
 
-/* line 27, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 26, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 h1 {
   font-size: 180px;
   font-weight: normal;
 }
 
-/* line 32, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 31, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+p {
+  font-size: 36px;
+}
+
+/* line 35, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer {
-  background-color: red;
+  background-color: #3fd061;
   width: 270px;
   height: 270px;
   border-radius: 69420px;
   margin: auto;
   text-align: center;
-  filter: drop-shadow(0, 0, 50px, rgba(68, 203, 97, 0.5));
 }
 
-/* line 42, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 43, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer #currentSpeed {
   font-weight: bold;
-  padding-top: 60px;
-  padding-bottom: 0px;
   margin-bottom: 0px;
-  line-height: 180px;
-  background-color: green;
+  padding: 90px 0px 0px;
+  line-height: 120px;
 }
 
-/* line 51, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 50, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer p {
   padding-top: 0px;
   margin-top: 0px;
