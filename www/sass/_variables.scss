@@ -1,5 +1,9 @@
+$gray: #1f1f1f;
 $green: rgb(63, 208, 97);
 $yellow: rgb(203, 181, 68);
 $red: rgb(203, 68, 68);
-
 $white: rgb(240, 240, 240);
+
+@mixin glow($color, $radius) {
+    box-shadow: 0 0 $radius rgba($color, 0.5);
+}
