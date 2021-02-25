@@ -1,3 +1,58 @@
+/* line 13, node_modules/meyer-sass/_meyer.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 35, node_modules/meyer-sass/_meyer.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 39, node_modules/meyer-sass/_meyer.sass */
+body {
+  line-height: 1;
+}
+
+/* line 42, node_modules/meyer-sass/_meyer.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 45, node_modules/meyer-sass/_meyer.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 47, node_modules/meyer-sass/_meyer.sass */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 51, node_modules/meyer-sass/_meyer.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 @font-face {
   font-family: "Overpass";
   src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
@@ -13,52 +68,18 @@
   src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
-/* line 4, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-  font-family: "Overpass";
-  color: #f0f0f0;
-}
-
-/* line 11, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-body {
-  -webkit-touch-callout: none;
-  /* prevent callout to copy image, etc when tap to hold */
-  -webkit-text-size-adjust: none;
-  /* prevent webkit from resizing text to fit */
-  -webkit-user-select: none;
-  /* prevent copy paste, to allow, change 'none' to 'text' */
-  background-color: #1f1f1f;
-  font-family: Overpass, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 12px;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
-  /* Padding to avoid the "unsafe" areas behind notches in the screen */
-  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-  text-transform: uppercase;
-  width: 100%;
-}
-
-/* line 27, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-h1 {
-  font-size: 180px;
-  font-weight: normal;
-}
-
-/* line 32, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 5, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #speedometer {
   background-color: red;
   width: 270px;
   height: 270px;
-  border-radius: 69420px;
+  border-radius: 1000px;
   margin: auto;
   text-align: center;
-  filter: drop-shadow(0, 0, 50px, rgba(68, 203, 97, 0.5));
+  box-shadow: 0 0 50px rgba(63, 208, 97, 0.5);
 }
 
-/* line 42, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 15, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #speedometer #currentSpeed {
   font-weight: bold;
   padding-top: 60px;
@@ -68,7 +89,7 @@ h1 {
   background-color: green;
 }
 
-/* line 51, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 25, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #speedometer p {
   padding-top: 0px;
   margin-top: 0px;

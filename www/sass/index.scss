@@ -1,43 +1,16 @@
+@import 'meyer';
 @import 'variables';
 @import 'fonts';
-
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-    
-    font-family: "Overpass";
-    color: $white;
-}
-
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#1f1f1f;
-    font-family: Overpass, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
-    height:100vh;
-    margin:0px;
-    padding:0px;
-    /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-    text-transform:uppercase;
-    width:100%;
-}
-
-h1 {
-    font-size:180px;
-    font-weight:normal;
-}
 
 #speedometer {
     background-color: red;
     width: 270px;
     height: 270px;
-    border-radius: 69420px;
+    border-radius: 1000px;
     margin: auto;
     text-align: center;
 
-    filter: drop-shadow(0, 0, 50px, rgba(68, 203, 97, 0.5));
+    @include glow($green, 50px);
 
     #currentSpeed {
         font-weight: bold;
@@ -48,6 +21,7 @@ h1 {
         line-height: 180px;
         background-color: green;
     }
+    
     p {
         padding-top: 0px;
         margin-top: 0px;
