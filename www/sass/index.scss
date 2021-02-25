@@ -35,17 +35,21 @@ h1 {
 
 @font-face {
     font-family: "Overpass";
-    src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
 @font-face {
     font-family: "Overpass Bold";
-    src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
 @font-face {
     font-family: "Overpass Black";
-    src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+
+* {
+    font-family: "Overpass";
 }
 
 #speedometer {

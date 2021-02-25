@@ -34,20 +34,25 @@ h1 {
 
 @font-face {
   font-family: "Overpass";
-  src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
 @font-face {
   font-family: "Overpass Bold";
-  src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
 @font-face {
   font-family: "Overpass Black";
-  src: url("/fonts/overpass-regular-webfont.woff") forma("woff");
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
 /* line 51, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+* {
+  font-family: "Overpass";
+}
+
+/* line 55, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #speedometer {
   background-color: red;
   width: 250px;
@@ -57,14 +62,14 @@ h1 {
   text-align: center;
 }
 
-/* line 60, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 64, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #currentSpeed {
   color: green;
   margin-bottom: 0px;
   font-weight: bold;
 }
 
-/* line 66, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 70, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #currentSpeed + p {
   color: blue;
 }
