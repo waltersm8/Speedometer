@@ -68,18 +68,35 @@ table {
   src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
-/* line 5, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 20, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/_fonts.scss */
+h1 {
+  font-size: 180px;
+}
+
+/* line 24, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/_fonts.scss */
+p {
+  font-size: 36px;
+}
+
+/* line 5, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+
+/* line 11, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer {
   background-color: #3fd061;
-  width: 270px;
-  height: 270px;
+  width: 260px;
+  height: 260px;
   border-radius: 1000px;
-  margin: auto;
+  margin: 60px auto;
   text-align: center;
   box-shadow: 0 0 50px rgba(63, 208, 97, 0.5);
 }
 
-/* line 15, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 21, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer #currentSpeed {
   font-weight: bold;
   margin-bottom: 0px;
@@ -87,10 +104,45 @@ table {
   line-height: 120px;
 }
 
-/* line 23, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 29, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer p {
   padding-top: 0px;
   margin-top: 0px;
+}
+
+/* line 35, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#speedLimit {
+  text-align: center;
+}
+
+/* line 37, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#speedLimit label {
+  display: block;
+  margin: 15px;
+  font-size: 24px;
+}
+
+/* line 42, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#speedLimit p {
+  font-size: 48px;
+  font-weight: bolder;
+  color: #3fd061;
+}
+
+/* line 50, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#warnings {
+  margin: auto;
+  display: block;
+}
+
+/* line 54, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#warnings dth
+div {
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  background-color: #3fd061;
+  margin: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */
