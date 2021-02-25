@@ -1,10 +1,27 @@
-/* line 1, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+@font-face {
+  font-family: "Overpass";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Overpass Bold";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Overpass Black";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+
+/* line 4, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  font-family: "Overpass";
+  color: #f0f0f0;
 }
 
-/* line 5, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 11, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 body {
   -webkit-touch-callout: none;
   /* prevent callout to copy image, etc when tap to hold */
@@ -24,54 +41,37 @@ body {
   width: 100%;
 }
 
-/* Portrait layout (default) */
-/* Landscape layout (with min-width) */
-/* line 31, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 27, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 h1 {
   font-size: 180px;
   font-weight: normal;
 }
 
-@font-face {
-  font-family: "Overpass";
-  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Overpass Bold";
-  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Overpass Black";
-  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-/* line 51, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-* {
-  font-family: "Overpass";
-}
-
-/* line 55, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
+/* line 32, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer {
   background-color: red;
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
+  width: 270px;
+  height: 270px;
+  border-radius: 69420px;
   margin: auto;
   text-align: center;
+  filter: drop-shadow(0, 0, 50px, rgba(68, 203, 97, 0.5));
 }
 
-/* line 64, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-#currentSpeed {
-  color: green;
-  margin-bottom: 0px;
+/* line 42, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#speedometer #currentSpeed {
   font-weight: bold;
+  padding-top: 60px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  line-height: 180px;
+  background-color: green;
 }
 
-/* line 70, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-#currentSpeed + p {
-  color: blue;
+/* line 51, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+#speedometer p {
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,5 +1,11 @@
+@import 'variables';
+@import 'fonts';
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    
+    font-family: "Overpass";
+    color: $white;
 }
 
 body {
@@ -18,55 +24,32 @@ body {
     width:100%;
 }
 
-/* Portrait layout (default) */
-.app {
-
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-
-}
-
 h1 {
     font-size:180px;
     font-weight:normal;
 }
 
-@font-face {
-    font-family: "Overpass";
-    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Overpass Bold";
-    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Overpass Black";
-    src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
-}
-
-* {
-    font-family: "Overpass";
-}
-
 #speedometer {
     background-color: red;
-    width: 250px;
-    height: 250px;
-    border-radius: 250px;
+    width: 270px;
+    height: 270px;
+    border-radius: 69420px;
     margin: auto;
     text-align: center;
-}
 
-#currentSpeed {
-    color: green;
-    margin-bottom: 0px;
-    font-weight: bold;
-}
+    filter: drop-shadow(0, 0, 50px, rgba(68, 203, 97, 0.5));
 
-#currentSpeed + p {
-    color: blue;
+    #currentSpeed {
+        font-weight: bold;
+
+        padding-top: 60px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        line-height: 180px;
+        background-color: green;
+    }
+    p {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
 }
