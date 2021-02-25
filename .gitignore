@@ -7,6 +7,8 @@ node_modules/
 /plugins/
 /platforms/
 
-www/css/
-www/css/index.css
-www/css/index.map
+/www/css/
+/www/css/index.css
+/www/css/index.map
+
+*.css
