@@ -5,5 +5,5 @@ $red: rgb(203, 68, 68);
 $white: rgb(240, 240, 240);
 
 @mixin glow($color, $radius) {
-    box-shadow: 0 0 $radius rgba($color, 0.75);
+    box-shadow: 0 0 $radius rgba($color, 0.5);
 }

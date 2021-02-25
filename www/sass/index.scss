@@ -52,15 +52,18 @@ body {
 }
 
 #warnings {
-    margin: auto;
     display: block;
+    width: 322.52px;
+    margin: auto;
 
-    dth
     div {
         display: inline-block;
 
         width: 65px;
         height: 65px;
+        border-radius: 69420px;
+
+        @include glow($green, 25px);
 
         background-color: $green;
         margin: 20px;
