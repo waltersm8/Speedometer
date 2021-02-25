@@ -68,49 +68,7 @@ table {
   src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
-<<<<<<< HEAD
 /* line 5, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-=======
-/* line 4, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-  font-family: "Overpass";
-  color: #f0f0f0;
-}
-
-/* line 11, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-body {
-  -webkit-touch-callout: none;
-  /* prevent callout to copy image, etc when tap to hold */
-  -webkit-text-size-adjust: none;
-  /* prevent webkit from resizing text to fit */
-  -webkit-user-select: none;
-  /* prevent copy paste, to allow, change 'none' to 'text' */
-  background-color: #1f1f1f;
-  font-family: Overpass, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 12px;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
-  /* Padding to avoid the "unsafe" areas behind notches in the screen */
-  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-  width: 100%;
-}
-
-/* line 26, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-h1 {
-  font-size: 180px;
-  font-weight: normal;
-}
-
-/* line 31, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
-p {
-  font-size: 36px;
-}
-
-/* line 35, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
->>>>>>> 59b27f3f556901d6be91700d70621da4636dcfa3
 #speedometer {
   background-color: #3fd061;
   width: 270px;
@@ -118,16 +76,10 @@ p {
   border-radius: 1000px;
   margin: auto;
   text-align: center;
-<<<<<<< HEAD
   box-shadow: 0 0 50px rgba(63, 208, 97, 0.5);
 }
 
 /* line 15, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-=======
-}
-
-/* line 43, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
->>>>>>> 59b27f3f556901d6be91700d70621da4636dcfa3
 #speedometer #currentSpeed {
   font-weight: bold;
   margin-bottom: 0px;
@@ -135,11 +87,7 @@ p {
   line-height: 120px;
 }
 
-<<<<<<< HEAD
-/* line 25, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
-=======
-/* line 50, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
->>>>>>> 59b27f3f556901d6be91700d70621da4636dcfa3
+/* line 23, ../../Documents/GitHub/Speedometer/www/sass/index.scss */
 #speedometer p {
   padding-top: 0px;
   margin-top: 0px;
