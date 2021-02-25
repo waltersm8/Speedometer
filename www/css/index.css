@@ -31,27 +31,24 @@ body {
   /* prevent copy paste, to allow, change 'none' to 'text' */
   background-color: #1f1f1f;
   font-family: Overpass, system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 12px;
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  /* Padding to avoid the "unsafe" areas behind notches in the screen */
-  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
   width: 100%;
 }
 
-/* line 26, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 23, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 h1 {
   font-size: 180px;
   font-weight: normal;
 }
 
-/* line 31, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 28, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 p {
   font-size: 36px;
 }
 
-/* line 35, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 32, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer {
   background-color: #3fd061;
   width: 270px;
@@ -61,7 +58,7 @@ p {
   text-align: center;
 }
 
-/* line 43, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 40, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer #currentSpeed {
   font-weight: bold;
   margin-bottom: 0px;
@@ -69,7 +66,7 @@ p {
   line-height: 120px;
 }
 
-/* line 50, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
+/* line 47, ../../../Desktop/2020 - 2021/2021/462/Speedometer/www/sass/index.scss */
 #speedometer p {
   padding-top: 0px;
   margin-top: 0px;
