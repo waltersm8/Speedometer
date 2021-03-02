@@ -1,0 +1,16 @@
+@import 'variables';
+
+.greenGlow {
+    background-color: $green;
+    @include glow($green, 25px);
+}
+
+.yellowGlow {
+    background-color: $yellow;
+    @include glow($yellow, 25px);
+}
+
+.redGlow {
+    background-color: $red;
+    @include glow($red, 25px);
+}

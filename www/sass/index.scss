@@ -1,6 +1,7 @@
 @import 'meyer';
 @import 'variables';
 @import 'fonts';
+@import 'classes';
 
 * {
     box-sizing: border-box;
@@ -62,10 +63,6 @@ body {
         width: 65px;
         height: 65px;
         border-radius: 69420px;
-
-        @include glow($green, 25px);
-
-        background-color: $green;
         margin: 20px;
     }
 }
