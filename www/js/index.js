@@ -58,7 +58,7 @@ function getPosition() {
  function watchPosition() {
     var options = {
        maximumAge: 3600000,
-       timeout: 250,
+       timeout: 200,
        enableHighAccuracy: true,
     }
     var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
@@ -78,11 +78,14 @@ function getPosition() {
 
          var speedDisplay = document.getElementById('currentSpeed');
 
-         speedDisplay.innerHTML = position.coords.speed;
+         speed = position.coords.speed;
+         speed = speed.toString();
+
+         speedDisplay.innerHTML = speed.split('.')[0];
       };
     
  
     function onError(error) {
-       alert('Oopsies, looks like we did a fucky wucky uwu \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+       alert('Oopsies, looks like we did a fucky wucky \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
     }
  }
