@@ -86,6 +86,6 @@ function getPosition() {
     
  
     function onError(error) {
-       alert('Oopsies, looks like we did a fucky wucky \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+       alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
     }
  }
