@@ -3,6 +3,17 @@ const apiKey = "AIzaSyCbArt4f2VQXDDfHho_TQbFlUMi9qURx9I";
 document.addEventListener('deviceready', onDeviceReady, false); //When device ready call onDeviceReady
 document.addEventListener("DOMContentLoaded", onPageReady, false); //When page loaded call onPageReady
 
+document.getElementById('settingsIcon').addEventListener('click', openSettings);
+document.getElementById('closeSettings').addEventListener('click', closeSettings);
+
+function openSettings() {
+   document.getElementById('settings').style.display = "block";
+}
+
+function closeSettings() {
+   document.getElementById('settings').style.display = "none";
+}
+
 function onDeviceReady() { //Device ready
    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 }

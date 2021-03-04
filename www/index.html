@@ -22,7 +22,10 @@
 
         <div id="speedLimit">
             <label>The speed limit is</label>
-            <p>70 mph</p>
+            <p>
+                <span>Unknown</span>
+                <span>mph</span>
+            </p>
         </div>
 
         <div id="warnings">
@@ -32,6 +35,25 @@
         </div>
 
         <button id = "getPosition">CURRENT POSITION</button>
+
+        <img id="settingsIcon" src="./img/Gray_Settings.png" alt="Settings Icon">
+
+        <div id="settings">
+            <p>Settings</p>
+            <hr>
+            <div>
+                <p>Contact: </p>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(123)-123-1234"> 
+
+                <p>Warning - MPH Over Limit: </p>
+                <input type="number" placeholder="5">
+                
+                <p>Danger - MPH Over Limit: </p>
+                <input type="number" placeholder="15">
+            </div>
+
+            <p id="closeSettings">Close</p>
+        </div>
 
         <script src="cordova.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
