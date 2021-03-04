@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyAyliqD6cYu1MmSduqEcYXHqYUD5OUqRBw";
+const apiKey = "AIzaSyCbArt4f2VQXDDfHho_TQbFlUMi9qURx9I";
 
 document.addEventListener('deviceready', onDeviceReady, false); //When device ready call onDeviceReady
 document.addEventListener("DOMContentLoaded", onPageReady, false); //When page loaded call onPageReady
@@ -81,15 +81,18 @@ function getSpeedLimit() {
              }
         })
         .done((data) => {
-            console.log(data);
+            console.log(data.snappedPoints);
             if(data.snappedPoints.length > 0) {
                 snappedLocation = data.snappedPoints[0].placeId;
+                /*
                 let speedLimit = $.ajax({
                      url: "https://roads.googleapis.com/v1/speedLimits",
                      async: true,
                      method: "get",
+                     dataType: 'json',
+                     contentType: 'json',
                      data: {
-                         placeId: location,
+                         placeId: snappedLocation,
                          key: apiKey
                      }
                  })
@@ -101,6 +104,7 @@ function getSpeedLimit() {
                      console.log(error);
                      alert("Failure");
                  });
+                 */
             }
         })
         .fail((error) => {
