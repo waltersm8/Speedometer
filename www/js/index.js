@@ -25,7 +25,7 @@ function onDeviceReady() { //Device ready
 }
 
 function onPageReady() { //Page ready
-   document.getElementById("getPosition").addEventListener("click", getSpeedLimit); //Click button to get current position
+   //document.getElementById("getPosition").addEventListener("click", getSpeedLimit); //Click button to get current position
 
    watchPosition(); //Tracks via gps
 }
