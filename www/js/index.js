@@ -73,6 +73,8 @@ function getPosition() { //This is more of a debugging function to run when get 
 
 //Get the speed limit to insert into a thing. Returns either the speed limit or null.
 function getSpeedLimit() {
+    return 45;
+    /*
     var options = {
         enableHighAccuracy: true,
         maximumAge: 3600000
@@ -95,7 +97,6 @@ function getSpeedLimit() {
             console.log(data.snappedPoints);
             if(data.snappedPoints.length > 0) {
                 snappedLocation = data.snappedPoints[0].placeId;
-                /*
                 let speedLimit = $.ajax({
                      url: "https://roads.googleapis.com/v1/speedLimits",
                      async: true,
@@ -115,7 +116,7 @@ function getSpeedLimit() {
                      console.log(error);
                      alert("Failure");
                  });
-                 */
+
             }
         })
         .fail((error) => {
@@ -130,5 +131,5 @@ function getSpeedLimit() {
         alert("Uh oh: " + error);
         return null;
     }
-
+    */
  }
