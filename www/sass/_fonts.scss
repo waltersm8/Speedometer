@@ -13,9 +13,9 @@
     src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
 }
 
-$regular: "Overpass";
-$bold: "Overpass Bold";
-$black: "Overpass Black";
+$regular: "Overpass", sans-serif;
+$bold: "Overpass Bold", sans-serif;
+$black: "Overpass Black", sans-serif;
 
 h1 {
     font-size: 180px;
