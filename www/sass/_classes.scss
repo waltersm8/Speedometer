@@ -14,3 +14,15 @@
     background-color: $red;
     @include glow($red, 25px);
 }
+
+.greenText {
+    color: $green;
+}
+
+.yellowText {
+    color: $yellow;
+}
+
+.redText {
+    color: $red;
+}

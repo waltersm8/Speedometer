@@ -1,7 +1,7 @@
 const apiKey = "AIzaSyCbArt4f2VQXDDfHho_TQbFlUMi9qURx9I";
 
 document.addEventListener('deviceready', onDeviceReady, false); //When device ready call onDeviceReady
-document.addEventListener("DOMContentLoaded", onPageReady, false); //When page loaded call onPageReady
+//document.addEventListener("DOMContentLoaded", onPageReady, false); //When page loaded call onPageReady
 
 document.getElementById('settingsIcon').addEventListener('click', openSettings);
 document.getElementById('closeSettings').addEventListener('click', closeSettings);
@@ -19,6 +19,9 @@ function closeSettings() {
 
 function onDeviceReady() { //Device ready
    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+   $(document).ready(function () {
+      onPageReady();
+   })
 }
 
 function onPageReady() { //Page ready
@@ -72,6 +75,8 @@ function getPosition() { //This is more of a debugging function to run when get 
          currentSpeed = parseInt(speed.split('.')[0]);
          currentSpeedLimit = getSpeedLimit();
 
+         $('#speedLimitValue').html(currentSpeedLimit);
+
          speedDiff = currentSpeed - currentSpeedLimit;
 
          //alert(speedDiff);
@@ -79,12 +84,15 @@ function getPosition() { //This is more of a debugging function to run when get 
          if (speedDiff > 15) {
             //red stuff
             $('#speedometer').removeClass('greenGlow yellowGlow').addClass('redGlow');
+            $('#speedLimit').removeClass('greenText yellowText').addClass('redText');
          } else if (speedDiff > 5) {
             //yellow stuff
             $('#speedometer').removeClass('greenGlow redGlow').addClass('yellowGlow');
+            $('#speedLimit').removeClass('greenText redText').addClass('yellowText');
          } else {
             //green stuff
             $('#speedometer').removeClass('redGlow yellowGlow').addClass('greenGlow');
+            $('#speedLimit').removeClass('redText yellowText').addClass('greenText');
          }
       };
 
