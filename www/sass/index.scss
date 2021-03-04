@@ -36,14 +36,11 @@ input {
 }
 
 #speedometer {
-    background-color: $green;
     width: 260px;
     height: 260px;
     border-radius: 1000px;
     margin: 60px auto;
     text-align: center;
-
-    @include glow($green, 50px);
 
     #currentSpeed {
         font-weight: bold;

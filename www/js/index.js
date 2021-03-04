@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", onPageReady, false); //When page l
 document.getElementById('settingsIcon').addEventListener('click', openSettings);
 document.getElementById('closeSettings').addEventListener('click', closeSettings);
 
+currentSpeed = null;
+currentSpeedLimit = null;
+
 function openSettings() {
    document.getElementById('settings').style.display = "block";
 }
@@ -21,7 +24,7 @@ function onDeviceReady() { //Device ready
 function onPageReady() { //Page ready
    document.getElementById("getPosition").addEventListener("click", getSpeedLimit); //Click button to get current position
 
-   //watchPosition(); //Tracks via gps
+   watchPosition(); //Tracks via gps
 }
 
 function getPosition() { //This is more of a debugging function to run when get position button is clicked
@@ -62,13 +65,34 @@ function getPosition() { //This is more of a debugging function to run when get 
          speed = position.coords.speed;
          speed = speed.toString();
 
+         //alert(speed);
+
          speedDisplay.innerHTML = speed.split('.')[0]; //Set current speed on the app
+
+         currentSpeed = parseInt(speed.split('.')[0]);
+         currentSpeedLimit = getSpeedLimit();
+
+         speedDiff = currentSpeed - currentSpeedLimit;
+
+         //alert(speedDiff);
+
+         if (speedDiff > 15) {
+            //red stuff
+            $('#speedometer').removeClass('greenGlow yellowGlow').addClass('redGlow');
+         } else if (speedDiff > 5) {
+            //yellow stuff
+            $('#speedometer').removeClass('greenGlow redGlow').addClass('yellowGlow');
+         } else {
+            //green stuff
+            $('#speedometer').removeClass('redGlow yellowGlow').addClass('greenGlow');
+         }
       };
 
+      
 
-    function onError(error) {
-       alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
-    }
+      function onError(error) {
+         alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+      }
  }
 
 //Get the speed limit to insert into a thing. Returns either the speed limit or null.
