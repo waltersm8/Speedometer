@@ -85,7 +85,8 @@ function onPageReady() { //Page ready
 }
 
 var timeSpeeding = 0;
-warnings = 0;
+var warnings = 0;
+var resetThreshHold = 0;
 
  function watchPosition() {
     var options = {
@@ -171,7 +172,12 @@ warnings = 0;
             $('#speedometer').removeClass('redGlow yellowGlow').addClass('greenGlow');
             $('#speedLimit').removeClass('redText yellowText').addClass('greenText');
 
-            timeSpeeding = 0;
+            resetThreshHold ++;
+
+            if (resetThreshHold > 5) {
+               timeSpeeding = 0;
+               resetThreshHold = 0;
+            }
 
             //alert('time reset');
          }
