@@ -133,6 +133,7 @@ warnings = 0;
                   $('#warning3').addClass('redGlow');
                   warnings++;
                } else {
+                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when i get home.');
                   alert('Contact notified');
                }
             }
@@ -160,6 +161,7 @@ warnings = 0;
                   $('#warning3').addClass('yellowGlow');
                   warnings++;
                } else {
+                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when i get home.');
                   alert('Contact notified');
                }
             }
@@ -169,13 +171,9 @@ warnings = 0;
             $('#speedometer').removeClass('redGlow yellowGlow').addClass('greenGlow');
             $('#speedLimit').removeClass('redText yellowText').addClass('greenText');
 
-<<<<<<< HEAD
-
-=======
             timeSpeeding = 0;
 
             alert('time reset');
->>>>>>> c89e749de90b13861d8c0e450b80fe69e6755ac6
 
          }
       };
