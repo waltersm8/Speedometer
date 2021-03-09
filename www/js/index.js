@@ -62,23 +62,19 @@ warnings = 0;
             timeSpeeding += 200;
 
             if (timeSpeeding > 3000) {
-               alert('Youve been naughty');
                timeSpeeding = 0;
 
                if (warnings == 0) {
                   $('#warning1').removeClass('greenGlow');
                   $('#warning1').addClass('redGlow');
-                  alert(warnings);
                   warnings++;
                } else if (warnings == 1) {
                   $('#warning2').removeClass('greenGlow');
                   $('#warning2').addClass('redGlow');
-                  alert(warnings);
                   warnings++;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
-                  alert(warnings);
                   warnings++;
                } else {
                   alert('Contact notified');
@@ -93,23 +89,19 @@ warnings = 0;
             timeSpeeding += 200;
 
             if (timeSpeeding > 3000) {
-               alert('Youve been naughty');
                timeSpeeding = 0;
 
                if (warnings == 0) {
                   $('#warning1').removeClass('greenGlow');
                   $('#warning1').addClass('yellowGlow');
-                  alert(warnings);
                   warnings++;
                } else if (warnings == 1) {
                   $('#warning2').removeClass('greenGlow');
                   $('#warning2').addClass('yellowGlow');
-                  alert(warnings);
                   warnings++;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
-                  alert(warnings);
                   warnings++;
                } else {
                   alert('Contact notified');
