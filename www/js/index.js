@@ -81,34 +81,11 @@ var smsController = {
 }
 
 function onPageReady() { //Page ready
-   //document.getElementById("getPosition").addEventListener("click", getSpeedLimit); //Click button to get current position
-
    watchPosition(); //Tracks via gps
 }
 
-function getPosition() { //This is more of a debugging function to run when get position button is clicked
-    var options = {
-       enableHighAccuracy: true,
-       maximumAge: 3600000
-    }
-    var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-
-    function onSuccess(position) {
-       alert(
-            'Latitude: '          + position.coords.latitude          + '\n' +
-            'Longitude: '         + position.coords.longitude         + '\n' +
-            'Altitude: '          + position.coords.altitude          + '\n' +
-            'Accuracy: '          + position.coords.accuracy          + '\n' +
-            'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-            'Heading: '           + position.coords.heading           + '\n' +
-            'Speed: '             + position.coords.speed             + '\n' +
-            'Timestamp: '         + position.timestamp                + '\n');
-    };
-
-    function onError(error) {
-      alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
-   }
- }
+var timeSpeeding = 0;
+warnings = 0;
 
  function watchPosition() {
     var options = {
@@ -124,8 +101,6 @@ function getPosition() { //This is more of a debugging function to run when get 
          speed = position.coords.speed;
          speed = speed.toString();
 
-         //alert(speed);
-
          speedDisplay.innerHTML = speed.split('.')[0]; //Set current speed on the app
 
          currentSpeed = parseInt(speed.split('.')[0]);
@@ -135,25 +110,75 @@ function getPosition() { //This is more of a debugging function to run when get 
 
          speedDiff = currentSpeed - currentSpeedLimit;
 
-         //alert(speedDiff);
-
          if (speedDiff > 15) {
             //red stuff
             $('#speedometer').removeClass('greenGlow yellowGlow').addClass('redGlow');
             $('#speedLimit').removeClass('greenText yellowText').addClass('redText');
+
+            timeSpeeding += 200;
+
+            if (timeSpeeding > 3000) {
+               timeSpeeding = 0;
+
+               if (warnings == 0) {
+                  $('#warning1').removeClass('greenGlow');
+                  $('#warning1').addClass('redGlow');
+                  warnings++;
+               } else if (warnings == 1) {
+                  $('#warning2').removeClass('greenGlow');
+                  $('#warning2').addClass('redGlow');
+                  warnings++;
+               } else if (warnings == 2) {
+                  $('#warning3').removeClass('greenGlow');
+                  $('#warning3').addClass('redGlow');
+                  warnings++;
+               } else {
+                  alert('Contact notified');
+               }
+            }
+
          } else if (speedDiff > 5) {
             //yellow stuff
             $('#speedometer').removeClass('greenGlow redGlow').addClass('yellowGlow');
             $('#speedLimit').removeClass('greenText redText').addClass('yellowText');
+
+            timeSpeeding += 200;
+
+            if (timeSpeeding > 3000) {
+               timeSpeeding = 0;
+
+               if (warnings == 0) {
+                  $('#warning1').removeClass('greenGlow');
+                  $('#warning1').addClass('yellowGlow');
+                  warnings++;
+               } else if (warnings == 1) {
+                  $('#warning2').removeClass('greenGlow');
+                  $('#warning2').addClass('yellowGlow');
+                  warnings++;
+               } else if (warnings == 2) {
+                  $('#warning3').removeClass('greenGlow');
+                  $('#warning3').addClass('yellowGlow');
+                  warnings++;
+               } else {
+                  alert('Contact notified');
+               }
+            }
+
          } else {
             //green stuff
             $('#speedometer').removeClass('redGlow yellowGlow').addClass('greenGlow');
             $('#speedLimit').removeClass('redText yellowText').addClass('greenText');
+
+<<<<<<< HEAD
+
+=======
+            timeSpeeding = 0;
+
+            alert('time reset');
+>>>>>>> c89e749de90b13861d8c0e450b80fe69e6755ac6
+
          }
       };
-
-
-
       function onError(error) {
          alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
       }
