@@ -64,7 +64,7 @@ var smsController = {
         var options = {
             replaceLineBreaks: true,
             android: {
-                intent: "INTENT"
+                intent: ""
             }
         };
 
@@ -76,7 +76,7 @@ var smsController = {
             console.error("Message failed: " + error);
         }
 
-        sms.send(number, message, options, success, error);
+        sms.send(number, message, options, success, failure);
     }
 }
 
