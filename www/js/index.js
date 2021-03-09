@@ -133,6 +133,7 @@ var resetThreshHold = 0;
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
                   smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
+                  $('#contactNotified').toggle();
                   warnings++;
                } else {
                   //alert('Contact notified');
@@ -161,6 +162,7 @@ var resetThreshHold = 0;
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
                   smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
+                  $('#contactNotified').toggle();
                   warnings++;
                } else {
                   //alert('Contact notified');
