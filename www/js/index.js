@@ -19,9 +19,65 @@ function closeSettings() {
 
 function onDeviceReady() { //Device ready
    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+
+   smsController.requestSMSPermission();
+
    $(document).ready(function () {
       onPageReady();
-   })
+  });
+}
+
+var smsController = {
+    checkSMSPermission: () => {
+        var success = (hasPermission) => {
+            if(hasPermission) {
+                console.log("App has SMS permission")
+            }
+            else {
+                alert("This app will not function properly without the ability to send SMS.\nPlease provide permission.");
+            }
+        };
+        var error = (error) => {
+            alert("Something went wrong: " + error);
+        }
+        sms.hasPermission(success, error);
+    },
+
+    requestSMSPermission: function() {
+        var success = function(hasPermission) {
+            if(!hasPermission) {
+                sms.requestPermission(function() {
+                    console.log("Permission accepted");
+                }, function(error) {
+                    alert("This app will not function properly without the ability to send SMS.\nPlease provide permission.");
+                    console.log(error);
+                });
+            }
+        };
+        var error = function(error) {
+            alert("Something went wrong: " + error);
+        }
+        sms.hasPermission(success, error);
+    },
+
+    sendSMS: (number, message) => {
+        var options = {
+            replaceLineBreaks: true,
+            android: {
+                intent: "INTENT"
+            }
+        };
+
+        var success = () => {
+            console.log("Message sent successfully");
+        }
+
+        var failure = (error) => {
+            console.error("Message failed: " + error);
+        }
+
+        sms.send(number, message, options, success, error);
+    }
 }
 
 function onPageReady() { //Page ready
@@ -96,7 +152,7 @@ function getPosition() { //This is more of a debugging function to run when get 
          }
       };
 
-      
+
 
       function onError(error) {
          alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
