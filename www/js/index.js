@@ -131,10 +131,10 @@ warnings = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
+                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
                   warnings++;
                } else {
-                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when i get home.');
-                  alert('Contact notified');
+                  //alert('Contact notified');
                }
             }
 
@@ -159,10 +159,10 @@ warnings = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
+                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
                   warnings++;
                } else {
-                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when i get home.');
-                  alert('Contact notified');
+                  //alert('Contact notified');
                }
             }
 
@@ -173,8 +173,7 @@ warnings = 0;
 
             timeSpeeding = 0;
 
-            alert('time reset');
-
+            //alert('time reset');
          }
       };
       function onError(error) {
