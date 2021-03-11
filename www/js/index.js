@@ -6,24 +6,76 @@ document.addEventListener('deviceready', onDeviceReady, false); //When device re
 document.getElementById('settingsIcon').addEventListener('click', openSettings);
 document.getElementById('closeSettings').addEventListener('click', closeSettings);
 
+var storage = window.localStorage;
+
 currentSpeed = null;
 currentSpeedLimit = null;
 
+function loadSettings() {
+    console.log('test');
+    if (storage.getItem('initialized') == 'true') {
+        console.log('Get values and put as placeholders');
+        phoneNumber = storage.getItem('phoneNumber');
+        warningOver = storage.getItem('warningOver');
+        dangerOver = storage.getItem('dangerOver');
+        timeSpeeding = storage.getItem('timeSpeeding');
+    
+        $('#phoneNumber').attr('placeholder', phoneNumber);
+        $('#warningOver').attr('placeholder', warningOver);
+        $('#dangerOver').attr('placeholder', dangerOver);
+        $('#timeSpeeding').attr('placeholder', timeSpeeding);
+    } else {
+        storage.setItem('phoneNumber', '');
+        storage.setItem('warningOver', '5');
+        storage.setItem('dangerOver', '15');
+        storage.setItem('timeSpeeding', '30');
+        storage.setItem('initialized', 'true');
+        console.log('Initialized Values');
+    }
+}
+
+function setSettings() {
+    phoneNumber = $('#phoneNumber').val();
+    warningOver = $('#warningOver').val();
+    dangerOver = $('#dangerOver').val();
+    timeSpeeding = $('#timeSpeeding').val();
+
+    if(phoneNumber) {
+        storage.setItem('phoneNumber', phoneNumber);
+        console.log('Set Phone Number')
+    }
+    if(warningOver) {
+        storage.setItem('warningOver', warningOver);
+        console.log('Set Warning Over')
+    }
+    if(dangerOver) {
+        storage.setItem('dangerOver', dangerOver);
+        console.log('Set Danger Over');
+    }
+    if(timeSpeeding) {
+        storage.setItem('timeSpeeding', timeSpeeding);
+        console.log('Set Time Speeding');
+    }
+}
+
 function openSettings() {
-   document.getElementById('settings').style.display = "block";
+    loadSettings();
+    document.getElementById('settings').style.display = "block";
 }
 
 function closeSettings() {
-   document.getElementById('settings').style.display = "none";
+    setSettings();
+    document.getElementById('settings').style.display = "none";
 }
 
 function onDeviceReady() { //Device ready
-   console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
-   smsController.requestSMSPermission();
+    smsController.requestSMSPermission();
 
-   $(document).ready(function () {
-      onPageReady();
+    $(document).ready(function () {
+
+        onPageReady();
   });
 }
 
