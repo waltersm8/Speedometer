@@ -163,7 +163,7 @@ var resetThreshHold = 0;
 
          speedDiff = currentSpeed - currentSpeedLimit;
 
-         if (speedDiff > 15) {
+         if (speedDiff > parseInt(storage.getItem('dangerOver'))) {
             //red stuff
             $('#speedometer').removeClass('greenGlow yellowGlow').addClass('redGlow');
             $('#speedLimit').removeClass('greenText yellowText').addClass('redText');
@@ -184,7 +184,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
-                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'I\'m speeding, ground me when I get home.');
                   $('#contactNotified').toggle();
                   warnings++;
                } else {
@@ -192,7 +192,7 @@ var resetThreshHold = 0;
                }
             }
 
-         } else if (speedDiff > 5) {
+         } else if (speedDiff > parseInt(storage.getItem('warningOver'))) {
             //yellow stuff
             $('#speedometer').removeClass('greenGlow redGlow').addClass('yellowGlow');
             $('#speedLimit').removeClass('greenText redText').addClass('yellowText');
@@ -213,7 +213,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
-                  smsController.sendSMS('8034937198', 'I\'m speeding, ground me when I get home.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'I\'m speeding, ground me when I get home.');
                   $('#contactNotified').toggle();
                   warnings++;
                } else {
