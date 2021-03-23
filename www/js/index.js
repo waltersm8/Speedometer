@@ -83,6 +83,7 @@ function openPin() {
 function setPin() {
     storage.userPin = $('#enteredPin').val();
     alert('User PIN has been set to: ' + storage.userPin);
+    loadSettings();
     openSettings();
 }
 
