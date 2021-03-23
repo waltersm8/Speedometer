@@ -224,4 +224,34 @@ input {
   display: none;
 }
 
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: rgba(31, 31, 31, 0.8);
+  text-align: center;
+}
+#popup div {
+  position: relative;
+  top: calc(30vh);
+}
+#popup div p {
+  font-size: 18px;
+}
+#popup div button {
+  margin: 24px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #3fd061;
+  border: none;
+  color: #f0f0f0;
+}
+#popup.hidden {
+  display: none;
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -259,6 +259,10 @@ var resetThreshHold = 0;
       }
  }
 
+ function hidePopup() {
+     $("#popup").addClass("hidden");
+ }
+
 //Get the speed limit to insert into a thing. Returns either the speed limit or null.
 function getSpeedLimit() {
     return 45;

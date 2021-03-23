@@ -90,3 +90,38 @@ input {
     margin-top: 10px;
     display: none;
 }
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 32px;
+    background-color: rgba($gray, 0.8);
+    text-align: center;
+
+    div {
+        position: relative;
+        top: calc(30vh);
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            margin: 24px;
+            padding: 12px;
+            font-size: 18px;
+            background-color: $green;
+            border: none;
+            color: $white;
+        }
+    }
+
+
+    &.hidden {
+        display: none;
+        pointer-events: none;
+    }
+}

@@ -36,6 +36,13 @@
 
         <p id="contactNotified">Contact Notified</p>
 
+        <div id="popup">
+            <div>
+                <p>Speedometer tracks your speed and alerts your parent or guardian if you exceed the legal speed limit.</p>
+                <button onclick="hidePopup();">I agree</button>
+            </div>
+        </div>
+
         <!--
             <button id = "getPosition">CURRENT POSITION</button>
         -->
@@ -47,11 +54,11 @@
             <hr>
             <div>
                 <p>Contact: </p>
-                <input type="tel" id="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> 
+                <input type="tel" id="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 
                 <p>Warning - MPH Over Limit: </p>
                 <input type="number" id="warningOver">
-                
+
                 <p>Danger - MPH Over Limit: </p>
                 <input type="number" id="dangerOver">
 
