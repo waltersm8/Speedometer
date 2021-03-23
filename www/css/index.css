@@ -1,1 +1,280 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}@font-face{font-family:"Overpass";src:url("../css/fonts/overpass-regular-webfont.woff") format("woff")}@font-face{font-family:"Overpass Bold";src:url("../css/fonts/overpass-regular-webfont.woff") format("woff")}@font-face{font-family:"Overpass Black";src:url("../css/fonts/overpass-regular-webfont.woff") format("woff")}h1{font-size:180px}p{font-size:36px}.greenGlow{background-color:#3fd061;box-shadow:0 0 25px rgba(63,208,97,0.5)}.yellowGlow{background-color:#cbb544;box-shadow:0 0 25px rgba(203,181,68,0.5)}.redGlow{background-color:#cb4444;box-shadow:0 0 25px rgba(203,68,68,0.5)}.greenText{color:#3fd061}.yellowText{color:#cbb544}.redText{color:#cb4444}#passcode{display:none;background-color:#1f1f1f;position:fixed;top:0;left:0;text-align:center;width:100vw;height:100vh}#passcode div{margin-top:40px}#passcode input{margin:20px}#passcode #setPinBtn{margin:20px auto 40px}#settings{display:none;background-color:#1f1f1f;position:fixed;top:0;left:0;text-align:center;width:100vw;height:100vh}#settings p{margin-top:15px}#settings hr{width:66%}#settings div{text-align:left;padding-left:20px}#settings div p{font-size:20px;display:inline-block}#settings div input{display:block;position:relative;top:-30px;margin-left:auto;margin-right:20px}#settings div input:nth-of-type(1){width:200px}#settings div input:nth-of-type(2),#settings div input:nth-of-type(3),#settings div input:nth-of-type(4){width:75px}#settings #closeSettings{display:inline-block}*{box-sizing:border-box}body{font-family:"Overpass",sans-serif;background-color:#1f1f1f;color:#f0f0f0}input{color:#f0f0f0;background-color:#3B3B3B;border-radius:10px;padding:5px;font-size:20px}::placeholder{color:#f0f0f0;opacity:0.75}#settingsIcon{position:absolute;top:10px;right:10px;width:50px;height:50px}#speedometer{width:260px;height:260px;border-radius:1000px;margin:60px auto;text-align:center}#speedometer #currentSpeed{font-weight:bold;margin-bottom:0px;padding:90px 0px 0px;line-height:120px}#speedometer p{padding-top:0px;margin-top:0px}#speedLimit{text-align:center}#speedLimit label{display:block;margin:15px;font-size:24px}#speedLimit p{font-size:48px;font-weight:bolder}#warnings{display:block;width:322.52px;margin:auto}#warnings div{display:inline-block;width:65px;height:65px;border-radius:69420px;margin:20px}#contactNotified{font-size:30px;text-align:center;margin-top:10px;display:none}#popup{position:fixed;top:0;left:0;width:100vw;height:100vh;padding:32px;background-color:rgba(31,31,31,0.8);text-align:center}#popup div{position:relative;top:calc(30vh)}#popup div p{font-size:18px}#popup div button{margin:24px;padding:12px;font-size:18px;background-color:#3fd061;border:none;color:#f0f0f0}#popup.hidden{display:none;pointer-events:none}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Overpass Bold";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Overpass Black";
+  src: url("../css/fonts/overpass-regular-webfont.woff") format("woff");
+}
+h1 {
+  font-size: 180px;
+}
+
+p {
+  font-size: 36px;
+}
+
+.greenGlow {
+  background-color: #3fd061;
+  box-shadow: 0 0 25px rgba(63, 208, 97, 0.5);
+}
+
+.yellowGlow {
+  background-color: #cbb544;
+  box-shadow: 0 0 25px rgba(203, 181, 68, 0.5);
+}
+
+.redGlow {
+  background-color: #cb4444;
+  box-shadow: 0 0 25px rgba(203, 68, 68, 0.5);
+}
+
+.greenText {
+  color: #3fd061;
+}
+
+.yellowText {
+  color: #cbb544;
+}
+
+.redText {
+  color: #cb4444;
+}
+
+#passcode {
+  display: none;
+  background-color: #1f1f1f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+#passcode div {
+  margin-top: 40px;
+}
+#passcode input {
+  margin: 20px;
+}
+#passcode #setPinBtn {
+  margin: 20px auto 40px;
+}
+
+#settings {
+  display: none;
+  background-color: #1f1f1f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+#settings p {
+  margin-top: 15px;
+}
+#settings hr {
+  width: 66%;
+}
+#settings div {
+  text-align: left;
+  padding-left: 20px;
+}
+#settings div p {
+  font-size: 20px;
+  display: inline-block;
+}
+#settings div input {
+  display: block;
+  position: relative;
+  top: -30px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+#settings div input:nth-of-type(1) {
+  width: 200px;
+}
+#settings div input:nth-of-type(2), #settings div input:nth-of-type(3), #settings div input:nth-of-type(4) {
+  width: 75px;
+}
+#settings #closeSettings {
+  display: inline-block;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+
+input {
+  color: #f0f0f0;
+  background-color: #3B3B3B;
+  border-radius: 10px;
+  border-color: #f0f0f0;
+  padding: 5px;
+  font-size: 20px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f0f0f0;
+  opacity: 0.75;
+  /* Firefox */
+}
+
+#settingsIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#speedometer {
+  width: 260px;
+  height: 260px;
+  border-radius: 1000px;
+  margin: 60px auto;
+  text-align: center;
+}
+#speedometer #currentSpeed {
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 90px 0px 0px;
+  line-height: 120px;
+}
+#speedometer p {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+#speedLimit {
+  text-align: center;
+}
+#speedLimit label {
+  display: block;
+  margin: 15px;
+  font-size: 24px;
+}
+#speedLimit p {
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+#warnings {
+  display: block;
+  width: 322.52px;
+  margin: auto;
+}
+#warnings div {
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  border-radius: 69420px;
+  margin: 20px;
+}
+
+#contactNotified {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: rgba(31, 31, 31, 0.8);
+  text-align: center;
+}
+#popup div {
+  position: relative;
+  top: calc(30vh);
+}
+#popup div p {
+  font-size: 18px;
+}
+#popup div button {
+  margin: 24px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #3fd061;
+  border: none;
+  color: #f0f0f0;
+}
+#popup.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=index.css.map */

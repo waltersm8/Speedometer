@@ -35,6 +35,9 @@ function loadSettings() {
 }
 
 function setSettings() {
+    let didSettingsChange = false;
+    const oldContactNumber = storage.getItem("phoneNumber");
+
     phoneNumber = $('#phoneNumber').val();
     warningOver = $('#warningOver').val();
     dangerOver = $('#dangerOver').val();
@@ -42,25 +45,33 @@ function setSettings() {
     newPin = $('#setNewPin').val();
 
     if(phoneNumber) {
-        smsController.sendSMS(storage.getItem("phoneNumber"), "ALERT: Your Speedometer contact number has changed to " + phoneNumber + ".");
+        didSettingsChange = true;
         storage.setItem('phoneNumber', phoneNumber);
         console.log('Set Phone Number')
     }
     if(warningOver) {
+        didSettingsChange = true;
         storage.setItem('warningOver', warningOver);
         console.log('Set Warning Over')
     }
     if(dangerOver) {
+        didSettingsChange = true;
         storage.setItem('dangerOver', dangerOver);
         console.log('Set Danger Over');
     }
     if(timeSpeeding) {
+        didSettingsChange = true;
         storage.setItem('timeSpeeding', timeSpeeding);
         console.log('Set Time Speeding');
     }
     if(newPin) {
+        didSettingsChange = true;
         storage.setItem('userPin', newPin);
         console.log('Set New PIN');
+    }
+
+    if(didSettingsChange) {
+        smsController.sendSMS(oldContactNumber, "Alert: My Speedometer settings have been changed.")
     }
 }
 
