@@ -1,5 +1,3 @@
-const apiKey = "AIzaSyCbArt4f2VQXDDfHho_TQbFlUMi9qURx9I";
-
 document.addEventListener('deviceready', onDeviceReady, false); //When device ready call onDeviceReady
 
 document.getElementById('settingsIcon').addEventListener('click', openSettings);
