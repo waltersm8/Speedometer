@@ -19,7 +19,7 @@ function loadSettings() {
         warningOver = storage.getItem('warningOver');
         dangerOver = storage.getItem('dangerOver');
         timeSpeeding = storage.getItem('timeSpeeding');
-    
+
         $('#phoneNumber').attr('placeholder', phoneNumber);
         $('#warningOver').attr('placeholder', warningOver);
         $('#dangerOver').attr('placeholder', dangerOver);
@@ -74,7 +74,6 @@ function onDeviceReady() { //Device ready
     smsController.requestSMSPermission();
 
     $(document).ready(function () {
-
         onPageReady();
   });
 }
@@ -184,7 +183,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
-                  smsController.sendSMS(storage.getItem('phoneNumber'), 'I\'m speeding, ground me when I get home.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER RED ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
                   warnings++;
                } else {
@@ -213,7 +212,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
-                  smsController.sendSMS(storage.getItem('phoneNumber'), 'I\'m speeding, ground me when I get home.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER YELLOW ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
                   warnings++;
                } else {
@@ -237,7 +236,7 @@ var resetThreshHold = 0;
          }
       };
       function onError(error) {
-         alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+         //alert('Oopsies the app developers suck \n\n The app should still run just fine we promise \n\n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
       }
  }
 
