@@ -78,16 +78,19 @@ function onDeviceReady() { //Device ready
 
 var vibrationController = {
     warning: () => {
+        navigator.notification.beep(1);
         navigator.vibrate(1000);
         console.log("Warning!")
     },
 
     danger: () => {
+        navigator.notification.beep(2);
         navigator.vibrate([1000, 100, 1000, 100, 1000, 100, 1000]);
         console.log("Danger!");
     },
 
     contactAlerted: () => {
+        navigator.notification.beep(3);
         navigator.vibrate([250, 100, 250, 100, 1000]);
         console.log("Contact Alerted!");
     }
