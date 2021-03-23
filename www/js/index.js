@@ -77,7 +77,8 @@ function setSettings() {
 
 function openPin() {
     loadSettings();
-    document.getElementById('passcode').style.display = "block";
+    $('#passcode').fadeIn();
+    document.getElementById('enteredPin').focus();
 
     $('#enteredPin').val('');
 
@@ -106,14 +107,14 @@ function checkPin() {
 }
 
 function openSettings() {
-    document.getElementById('passcode').style.display = "none";
-    document.getElementById('settings').style.display = "block";
+    document.getElementById('enteredPin').blur();
+    $('#settings').fadeIn();
 }
 
 function closeSettings() {
     setSettings();
-    document.getElementById('settings').style.display = "none";
-    document.getElementById('passcode').style.display = "none";
+    $('#settings').fadeOut();
+    $('#passcode').fadeOut();
 }
 
 function onDeviceReady() { //Device ready
