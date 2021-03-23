@@ -17,11 +17,13 @@ function loadSettings() {
         warningOver = storage.getItem('warningOver');
         dangerOver = storage.getItem('dangerOver');
         timeSpeeding = storage.getItem('timeSpeeding');
+        userPin = storage.getItem('userPin');
 
         $('#phoneNumber').attr('placeholder', phoneNumber);
         $('#warningOver').attr('placeholder', warningOver);
         $('#dangerOver').attr('placeholder', dangerOver);
         $('#timeSpeeding').attr('placeholder', timeSpeeding);
+        $('#setNewPin').attr('placeholder', userPin);
     } else {
         storage.setItem('phoneNumber', '');
         storage.setItem('warningOver', '5');
@@ -37,6 +39,7 @@ function setSettings() {
     warningOver = $('#warningOver').val();
     dangerOver = $('#dangerOver').val();
     timeSpeeding = $('#timeSpeeding').val();
+    newPin = $('#setNewPin').val();
 
     if(phoneNumber) {
         smsController.sendSMS(storage.getItem("phoneNumber"), "ALERT: Your Speedometer contact number has changed to " + phoneNumber + ".");
@@ -54,6 +57,10 @@ function setSettings() {
     if(timeSpeeding) {
         storage.setItem('timeSpeeding', timeSpeeding);
         console.log('Set Time Speeding');
+    }
+    if(newPin) {
+        storage.setItem('userPin', newPin);
+        console.log('Set New PIN');
     }
 }
 
