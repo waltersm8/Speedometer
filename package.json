@@ -15,6 +15,7 @@
   "devDependencies": {
     "cordova-android": "^9.0.0",
     "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-vibration": "^3.1.1",
     "cordova-plugin-whitelist": "^1.3.4",
     "cordova-sms-plugin": "^1.0.1"
   },
@@ -24,7 +25,8 @@
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
       },
-      "cordova-sms-plugin": {}
+      "cordova-sms-plugin": {},
+      "cordova-plugin-vibration": {}
     },
     "platforms": [
       "android"

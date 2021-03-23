@@ -78,6 +78,23 @@ function onDeviceReady() { //Device ready
   });
 }
 
+var vibrationController = {
+    warning: () => {
+        navigator.vibrate(1000);
+        console.log("Warning!")
+    },
+
+    danger: () => {
+        navigator.vibrate([1000, 100, 1000, 100, 1000, 100, 1000]);
+        console.log("Danger!");
+    },
+
+    contactAlerted: () => {
+        navigator.vibrate([250, 100, 250, 100, 1000]);
+        console.log("Contact Alerted!");
+    }
+}
+
 var smsController = {
     checkSMSPermission: () => {
         var success = (hasPermission) => {
@@ -186,9 +203,10 @@ var resetThreshHold = 0;
                   smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER RED ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
                   warnings++;
-               } else {
-                  //alert('Contact notified');
+                  vibrationController.contactAlerted();
                }
+
+               vibrationController.danger();
             }
 
          } else if (speedDiff > parseInt(storage.getItem('warningOver'))) {
@@ -214,10 +232,11 @@ var resetThreshHold = 0;
                   $('#warning3').addClass('yellowGlow');
                   smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER YELLOW ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
+                  vibrationController.contactAlerted();
                   warnings++;
-               } else {
-                  //alert('Contact notified');
                }
+
+               vibrationController.warning();
             }
 
          } else {
