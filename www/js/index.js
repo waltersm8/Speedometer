@@ -41,6 +41,7 @@ function setSettings() {
     timeSpeeding = $('#timeSpeeding').val();
 
     if(phoneNumber) {
+        smsController.sendSMS(storage.getItem("phoneNumber"), "ALERT: Your Speedometer contact number has changed to " + phoneNumber + ".");
         storage.setItem('phoneNumber', phoneNumber);
         console.log('Set Phone Number')
     }
