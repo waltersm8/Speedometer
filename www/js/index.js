@@ -67,6 +67,7 @@ function setSettings() {
 function openPin() {
     loadSettings();
     document.getElementById('passcode').style.display = "block";
+    document.getElementById('enteredPin').focus();
 
     $('#enteredPin').val('');
 
