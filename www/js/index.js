@@ -1,7 +1,8 @@
 document.addEventListener('deviceready', onDeviceReady, false); //When device ready call onDeviceReady
 
-document.getElementById('settingsIcon').addEventListener('click', openSettings);
+document.getElementById('settingsIcon').addEventListener('click', openPin);
 document.getElementById('closeSettings').addEventListener('click', closeSettings);
+document.getElementById('closePin').addEventListener('click', closeSettings);
 
 var storage = window.localStorage;
 
@@ -55,14 +56,45 @@ function setSettings() {
     }
 }
 
-function openSettings() {
+function openPin() {
     loadSettings();
+    document.getElementById('passcode').style.display = "block";
+
+    $('#enteredPin').val('');
+
+    if(storage.userPin) {
+        $('#pinHeader').html('Input User PIN');
+        $('#setPinBtn').css('display', 'none');
+    } else {
+        $('#pinHeader').html('Set A PIN')
+        $('#setPinBtn').css('display', 'block');
+    }
+}
+
+function setPin() {
+    storage.userPin = $('#enteredPin').val();
+    alert('User PIN has been set to: ' + storage.userPin);
+    openSettings();
+}
+
+function checkPin() {
+    enteredPin = $('#enteredPin').val();
+    if (enteredPin == storage.userPin) {
+        openSettings();
+        $('#enteredPin').val('');
+    }
+
+}
+
+function openSettings() {
+    document.getElementById('passcode').style.display = "none";
     document.getElementById('settings').style.display = "block";
 }
 
 function closeSettings() {
     setSettings();
     document.getElementById('settings').style.display = "none";
+    document.getElementById('passcode').style.display = "none";
 }
 
 function onDeviceReady() { //Device ready

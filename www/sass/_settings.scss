@@ -2,6 +2,28 @@
 //@import 'fonts';
 //@import 'classes';
 
+#passcode {
+    display: none;
+    background-color: $gray;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+    width: 100vw;
+    height: 100vh;
+    div {
+        margin-top: 40px;
+    }
+    input {
+        margin: 20px;
+    }
+    #setPinBtn {
+        margin: 20px auto 40px;
+    }
+}
+
 #settings {
     display: none;
     background-color: $gray;
