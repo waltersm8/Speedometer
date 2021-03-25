@@ -6,6 +6,10 @@ document.getElementById('closePin').addEventListener('click', closeSettings);
 
 var storage = window.localStorage;
 
+window.addEventListener("pause", () => {
+    smsController.sendSMS(storage.getItem('phoneNumber'), "Alert: Im finishing up my drive.")
+})
+
 currentSpeed = null;
 currentSpeedLimit = null;
 
