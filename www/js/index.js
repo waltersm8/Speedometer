@@ -79,7 +79,7 @@ function setSettings() {
     }
 
     if(didSettingsChange) {
-        smsController.sendSMS(oldContactNumber, "Alert: My Speedometer settings have been changed.")
+        smsController.sendSMS(oldContactNumber, "ALERT: My Speedometer settings have been changed.")
     }
 }
 
@@ -262,7 +262,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('redGlow');
-                  smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER RED ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'RED ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
                   warnings++;
                   vibrationController.contactAlerted();
@@ -292,7 +292,7 @@ var resetThreshHold = 0;
                } else if (warnings == 2) {
                   $('#warning3').removeClass('greenGlow');
                   $('#warning3').addClass('yellowGlow');
-                  smsController.sendSMS(storage.getItem('phoneNumber'), 'SPEEDOMETER YELLOW ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
+                  smsController.sendSMS(storage.getItem('phoneNumber'), 'YELLOW ALERT: I\'m going ' + currentSpeed + 'mph in a ' + currentSpeedLimit + 'mph zone.');
                   $('#contactNotified').toggle();
                   vibrationController.contactAlerted();
                   warnings++;
@@ -317,7 +317,7 @@ var resetThreshHold = 0;
          }
       };
       function onError(error) {
-          //Dont show error
+          //smsController.sendSMS("ALERT: Speedometer encountered an error tracking speed");
       }
  }
 
