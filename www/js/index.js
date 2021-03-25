@@ -6,9 +6,13 @@ document.getElementById('closePin').addEventListener('click', closeSettings);
 
 var storage = window.localStorage;
 
-window.addEventListener("pause", () => {
-    smsController.sendSMS(storage.getItem('phoneNumber'), "Alert: Im finishing up my drive.")
+document.addEventListener("pause", () => {
+    smsController.sendSMS(storage.getItem('phoneNumber'), "ALERT: Speedometer is no longer tracking my speed.")
 })
+
+document.addEventListener("resume", () => {
+    smsController.sendSMS(storage.getItem('phoneNumber'), "ALERT: Speedometer has resumed tracking my speed.");
+});
 
 currentSpeed = null;
 currentSpeedLimit = null;
@@ -128,6 +132,7 @@ function onDeviceReady() { //Device ready
     smsController.requestSMSPermission();
 
     $(document).ready(function () {
+        smsController.sendSMS(localStorage.getItem("phoneNumber"), "ALERT: I'm going on a drive.");
         onPageReady();
   });
 }

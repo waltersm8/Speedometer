@@ -6,6 +6,7 @@
 
 * {
     box-sizing: border-box;
+    color: $white;
     -webkit-transition: background-color .3s ease-out, color .3s ease-out, box-shadow .3s ease-out;
     transition: background-color .3s ease-out, color .3s ease-out, box-shadow .3s ease-out;
 }
